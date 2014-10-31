@@ -56,8 +56,11 @@ set sidescrolloff=2
 set tabstop=4
 set shiftwidth=4
 
-" No tabs
+" Replace tabs with spaces
 set expandtab
+
+" Bash style completion
+set wildmode=list:longest
 
 " Display line numbers
 set number
