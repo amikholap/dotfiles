@@ -153,3 +153,6 @@ set background=dark
 
 set guioptions-=T
 set guifont=Inconsolata\ Medium\ 14
+
+" Display tab numbers
+set guitablabel=[%N]\ %f
