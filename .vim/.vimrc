@@ -27,10 +27,6 @@ filetype plugin indent on
 
 " ***** GENERAL CONFIG *****
 
-" Enable filetype detection and load filetype specific plugins
-filetype on
-filetype plugin on
-
 " Override default colors for syntax highlighting
 syntax on
 
