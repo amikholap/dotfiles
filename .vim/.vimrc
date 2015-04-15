@@ -27,6 +27,11 @@ filetype plugin indent on
 
 " ***** GENERAL CONFIG *****
 
+" Russian keymap for insert mode
+set keymap=russian-jcukenwin
+set iminsert=0
+set imsearch=0
+
 " Override default colors for syntax highlighting
 syntax on
 
