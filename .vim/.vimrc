@@ -45,6 +45,12 @@ au BufRead,BufNewFile *py set colorcolumn=120
 " 2 space indentation for HTML and CSS
 autocmd FileType html,css set shiftwidth=2
 
+" TEX files:
+"   * 2 space indentation
+"   * spellcheck
+autocmd FileType tex set shiftwidth=2
+autocmd FileType tex set spell spelllang=ru_ru,en_us
+
 " Use UNIX (\n) line endings.
 " Only used for new files so as to not force existing files to change their line endings.
 set fileformat=unix
