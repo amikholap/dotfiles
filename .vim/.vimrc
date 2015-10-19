@@ -79,6 +79,9 @@ set number
 set hlsearch
 set incsearch
 
+" Turn off search highlight
+nnoremap <leader><space> :nohlsearch<CR>
+
 " Search before cursor too
 set wrapscan
 
