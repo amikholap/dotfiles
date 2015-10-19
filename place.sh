@@ -1,2 +1,2 @@
-ln -s $PWD/.vim          ~/.vim
-ln -s $PWD/.vim/.vimrc   ~/.vimrc
+ln -sf $PWD/.vim          ~/.vim
+ln -sf $PWD/.vim/.vimrc   ~/.vimrc
