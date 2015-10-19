@@ -27,6 +27,9 @@ filetype plugin indent on
 
 " ***** GENERAL CONFIG *****
 
+" Remap leader from \ to ,
+let mapleader=","
+
 " Russian keymap for insert mode
 set keymap=russian-jcukenwin
 set iminsert=0
