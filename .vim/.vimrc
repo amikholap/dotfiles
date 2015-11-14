@@ -117,6 +117,9 @@ imap jj <Esc>
 " Highlight line under cursor
 nnoremap <Leader>c :set cursorline!<CR>
 
+" Insert ipdb.set_trace under the current line
+map <Leader>b oimport ipdb; ipdb.set_trace()<Esc>
+
 " Easy split window navigation
 " use ALT+navigation key to switch split windows
 nmap <silent> <C-k> :wincmd k<CR>
