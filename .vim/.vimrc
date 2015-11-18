@@ -148,11 +148,12 @@ let g:session_autosave='no'
 nmap <F9> :TagbarToggle<CR>
 
 " Syntastic
+" Set path to pylintrc
+let g:syntastic_python_pylint_args = '--rcfile=~/.pylintrc'
 " Modify statusline
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
-
 " Update the location-list automatically
 let g:syntastic_always_populate_loc_list = 1
 " Open error window when errors are detected and close it after they're fixed
