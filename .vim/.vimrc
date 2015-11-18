@@ -148,8 +148,17 @@ let g:session_autosave='no'
 nmap <F9> :TagbarToggle<CR>
 
 " Syntastic
-" Set flake8 max line length to 120 characters
-let g:syntastic_python_flake8_args = "--max-line-length=120"
+" Modify statusline
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+" Update the location-list automatically
+let g:syntastic_always_populate_loc_list = 1
+" Open error window when errors are detected and close it after they're fixed
+let g:syntastic_auto_loc_list = 1
+" Don't run syntax checks when closing a buffer
+let g:syntastic_check_on_wq = 0
 
 " Emmet
 " Enable just for html/css
