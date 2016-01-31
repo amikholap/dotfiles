@@ -61,7 +61,16 @@ confidence=
 # --disable=W"
 # C0111: Missing docstring
 # R0201: Method could be a function
-disable=C0111,R0201
+# R0901: Too many ancestors (N/7)
+# R0902: Too many instance attributes (N/7)
+# R0903: Too few public methods (N/2)
+# R0904: Too many public methods (N/20)
+# R0911: Too many return statements (N/6)
+# R0912: Too many branches (N/12)
+# R0913: Too many arguments (N/5)
+# R0914: Too many local variables (N/15)
+# R0915: Too many statements (N/50)
+disable=C0111,R0201,R0801,R0901,R0902,R0903,R0904,R0911,R0912,R0913,R0914,R0915
 
 
 [REPORTS]
