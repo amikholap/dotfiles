@@ -161,7 +161,8 @@ inlinevar-rgx=[A-Za-z_][A-Za-z0-9_]*$
 inlinevar-name-hint=[A-Za-z_][A-Za-z0-9_]*$
 
 # Regular expression matching correct argument names
-argument-rgx=[a-z_][a-z0-9_]{2,30}$
+# Capital X is for ML dataset variables
+argument-rgx=[a-zX_][a-z0-9_]{2,30}$
 
 # Naming hint for argument names
 argument-name-hint=[a-z_][a-z0-9_]{2,30}$
@@ -185,7 +186,7 @@ module-rgx=(([a-z_][a-z0-9_]*)|([A-Z][a-zA-Z0-9]+))$
 module-name-hint=(([a-z_][a-z0-9_]*)|([A-Z][a-zA-Z0-9]+))$
 
 # Regular expression matching correct attribute names
-attr-rgx=[a-z_][a-z0-9_]{2,30}$
+attr-rgx=[a-zX_][a-z0-9_]{2,30}$
 
 # Naming hint for attribute names
 attr-name-hint=[a-z_][a-z0-9_]{2,30}$
