@@ -114,6 +114,9 @@ set writebackup
 " Exit from insert mode
 imap jj <Esc>
 
+" Write buffer
+map <Leader>w :w<CR>
+
 " Highlight line under cursor
 nnoremap <Leader>c :set cursorline!<CR>
 
