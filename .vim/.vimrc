@@ -20,6 +20,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'xolox/vim-misc'
 Plugin 'hynek/vim-python-pep8-indent'
 Plugin 'xolox/vim-session'
+Plugin 'lervag/vimtex'
 
 call vundle#end()
 filetype plugin indent on
@@ -27,8 +28,9 @@ filetype plugin indent on
 
 " ***** GENERAL CONFIG *****
 
-" Remap leader from \ to ,
+" Remap global and local leaders to ,
 let mapleader=","
+let maplocalleader=","
 
 " Russian keymap for insert mode
 set keymap=russian-jcukenwin
@@ -168,6 +170,10 @@ let g:syntastic_check_on_wq = 0
 " Enable just for html/css
 let g:user_emmet_install_global = 0
 autocmd FileType html,css EmmetInstall
+
+" vimtex
+" Disable latexmk interface
+let g:vimtex_latexmk_enabled = 0
 
 
 " ***** VISUALS *****
