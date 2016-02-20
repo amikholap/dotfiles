@@ -43,9 +43,9 @@ syntax on
 " Force plpgsql syntax highlighting
 au BufRead,BufNewFile *pgsql,*plpgsql setf pgsql
 
-" Wrap text after a certain number of characters and highlight 120-char mark with python code
-au BufRead,BufNewFile *py set textwidth=120
-au BufRead,BufNewFile *py set colorcolumn=120
+" Wrap text after a certain number of characters and highlight 100-char mark with python code
+au BufRead,BufNewFile *py set textwidth=100
+au BufRead,BufNewFile *py set colorcolumn=100
 
 " 2 space indentation for HTML and CSS
 autocmd FileType html,css set shiftwidth=2
