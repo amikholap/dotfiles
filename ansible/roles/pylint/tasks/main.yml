@@ -1,0 +1,5 @@
+- name: link .pylintrc
+  file:
+    src: "{{ playbook_dir | dirname }}/.pylintrc"
+    path: "{{ ansible_user_dir }}/.pylintrc"
+    state: link

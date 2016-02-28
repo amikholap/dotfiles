@@ -1,0 +1,16 @@
+- name: ensure vim is installed
+  apt:
+    name: vim
+    state: latest
+
+- name: link .vim/
+  file:
+    src: "{{ playbook_dir | dirname }}/.vim"
+    path: "{{ ansible_user_dir }}/.vim"
+    state: link
+
+- name: link .vimrc
+  file:
+    src: "{{ playbook_dir | dirname }}/.vim/.vimrc"
+    path: "{{ ansible_user_dir }}/.vimrc"
+    state: link
