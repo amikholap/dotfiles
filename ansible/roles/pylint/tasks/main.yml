@@ -1,5 +1,5 @@
 - name: link .pylintrc
   file:
-    src: "{{ playbook_dir | dirname }}/.pylintrc"
-    path: "{{ ansible_user_dir }}/.pylintrc"
+    src: "{{ ansible_env.PWD | dirname }}/.pylintrc"
+    path: "{{ ansible_env.HOME }}/.pylintrc"
     state: link

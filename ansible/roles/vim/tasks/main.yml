@@ -5,12 +5,12 @@
 
 - name: link .vim/
   file:
-    src: "{{ playbook_dir | dirname }}/.vim"
-    path: "{{ ansible_user_dir }}/.vim"
+    src: "{{ ansible_env.PWD | dirname }}/.vim"
+    path: "{{ ansible_env.HOME }}/.vim"
     state: link
 
 - name: link .vimrc
   file:
-    src: "{{ playbook_dir | dirname }}/.vim/.vimrc"
-    path: "{{ ansible_user_dir }}/.vimrc"
+    src: "{{ ansible_env.PWD | dirname }}/.vim/.vimrc"
+    path: "{{ ansible_env.HOME }}/.vimrc"
     state: link
