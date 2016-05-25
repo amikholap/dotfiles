@@ -155,6 +155,8 @@ nmap <F9> :TagbarToggle<CR>
 " Syntastic
 " Set path to pylintrc
 let g:syntastic_python_pylint_args = '--rcfile=~/.pylintrc'
+" Max line length for flake8
+let g:syntastic_python_flake8_args = "--max-line-length=120"
 " Modify statusline
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
