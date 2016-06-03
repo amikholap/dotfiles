@@ -70,7 +70,8 @@ confidence=
 # R0913: Too many arguments (N/5)
 # R0914: Too many local variables (N/15)
 # R0915: Too many statements (N/50)
-disable=C0111,R0201,R0901,R0902,R0903,R0904,R0911,R0912,R0913,R0914,R0915
+# W0703: Catching too general exception Exception
+disable=C0111,R0201,R0901,R0902,R0903,R0904,R0911,R0912,R0913,R0914,R0915,W0703
 
 
 [REPORTS]
