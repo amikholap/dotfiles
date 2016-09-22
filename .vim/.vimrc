@@ -17,11 +17,15 @@ Plugin 'elentok/plaintasks.vim'
 Plugin 'scrooloose/syntastic'
 Plugin 'majutsushi/tagbar'
 Plugin 'altercation/vim-colors-solarized'
+Plugin 'octol/vim-cpp-enhanced-highlight'
 Plugin 'tpope/vim-fugitive'
 Plugin 'xolox/vim-misc'
+Plugin 'uarun/vim-protobuf'
 Plugin 'hynek/vim-python-pep8-indent'
 Plugin 'xolox/vim-session'
+Plugin 'chriskempson/vim-tomorrow-theme'
 Plugin 'lervag/vimtex'
+Plugin 'Valloric/YouCompleteMe'
 
 call vundle#end()
 filetype plugin indent on
@@ -95,14 +99,14 @@ set smartcase
 " Set the default file encoding to UTF-8: 
 set encoding=utf-8
 
-" Change charset by F8
+" Change charset by F7
 set wildmenu
 set wcm=<Tab>
 menu Encoding.koi8-r       :e ++enc=koi8-r<CR>
 menu Encoding.windows-1251 :e ++enc=cp1251<CR>
 menu Encoding.ibm-866      :e ++enc=ibm866<CR>
 menu Encoding.utf-8        :e ++enc=utf-8 <CR>
-map <F8> :emenu Encoding.<TAB>
+map <F7> :emenu Encoding.<TAB>
 
 " Enable backup files in temp folder
 set noswapfile " disable swap - all buffers will be opened in memory
@@ -149,6 +153,10 @@ let NERDTreeIgnore = ['\.pyc$', '\.pyo$', '\.swp$', '\~$']
 " sessions
 " Disable session autosave dialog
 let g:session_autosave='no'
+let g:session_persist_globals = [
+    \ 'g:syntastic_python_checkers',
+    \ 'g:syntastic_python_pylint_post_args'
+    \]
 
 " TagBar
 nmap <F9> :TagbarToggle<CR>
@@ -156,6 +164,7 @@ nmap <F9> :TagbarToggle<CR>
 " Syntastic
 " Set path to pylintrc
 let g:syntastic_python_pylint_args = '--rcfile=~/.pylintrc'
+let g:syntastic_python_pylint_post_args = ''
 " Max line length for flake8
 let g:syntastic_python_flake8_args = "--max-line-length=120"
 " Modify statusline
@@ -177,6 +186,38 @@ autocmd FileType html,css EmmetInstall
 " vimtex
 " Disable latexmk interface
 let g:vimtex_latexmk_enabled = 0
+
+" YouCompleteMe
+let g:ycm_add_preview_to_completeopt = 1
+let g:ycm_autoclose_preview_window_after_completion = 1
+let g:ycm_autoclose_preview_window_after_insertion = 1
+let g:ycm_goto_buffer_command = 'new-tab'
+let g:ycm_error_symbol = '☓'
+let g:ycm_warning_symbol = '☝'
+let g:ycm_filetype_whitelist = {
+    \ 'cpp': 1
+    \}
+let g:ycm_filetype_specific_completion_to_disable = {
+    \ 'csv' : 1,
+    \ 'diff' : 1,
+    \ 'gitcommit' : 1,
+    \ 'help' : 1,
+    \ 'infolog' : 1,
+    \ 'mail' : 1,
+    \ 'markdown' : 1,
+    \ 'notes' : 1,
+    \ 'pandoc' : 1,
+    \ 'qf' : 1,
+    \ 'svn' : 1,
+    \ 'tagbar' : 1,
+    \ 'text' : 1,
+    \ 'unite' : 1,
+    \ 'vimwiki' : 1
+    \}
+autocmd FileType c,cpp nnoremap <Leader>] :YcmCompleter GoTo<CR>
+autocmd FileType c,cpp nnoremap <Leader>] :YcmCompleter GoTo<CR>
+autocmd FileType c,cpp nnoremap <Leader>l :YcmDiags<CR>
+autocmd FileType c,cpp nnoremap <Leader>h :YcmCompleter GetDoc<CR>
 
 
 " ***** VISUALS *****
