@@ -19,6 +19,7 @@ Plugin 'majutsushi/tagbar'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'octol/vim-cpp-enhanced-highlight'
 Plugin 'tpope/vim-fugitive'
+Plugin 'pangloss/vim-javascript'
 Plugin 'xolox/vim-misc'
 Plugin 'uarun/vim-protobuf'
 Plugin 'hynek/vim-python-pep8-indent'
@@ -52,8 +53,8 @@ au BufRead,BufNewFile *pgsql,*plpgsql setf pgsql
 au BufRead,BufNewFile *py set textwidth=100
 au BufRead,BufNewFile *py set colorcolumn=100
 
-" 2 space indentation for HTML and CSS
-autocmd FileType html,css set shiftwidth=2
+" 4 space indentation for HTML, CSS and Javascript
+autocmd FileType html,css,javascript set shiftwidth=4
 
 " TEX files:
 "   * 2 space indentation
@@ -155,6 +156,7 @@ let NERDTreeIgnore = ['\.pyc$', '\.pyo$', '\.swp$', '\~$']
 let g:session_autosave='no'
 let g:session_persist_globals = [
     \ 'g:syntastic_python_checkers',
+    \ 'g:syntastic_python_pylint_args',
     \ 'g:syntastic_python_pylint_post_args'
     \]
 
