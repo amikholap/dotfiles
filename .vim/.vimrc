@@ -6,7 +6,9 @@ call vundle#begin()
 
 Plugin 'gmarik/Vundle.vim'
 
+"Plugin 'w0rp/ale'
 Plugin 'pearofducks/ansible-vim'
+Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'mattn/emmet-vim'
 Plugin 'othree/html5.vim'
 Plugin 'scrooloose/nerdcommenter'
@@ -20,6 +22,7 @@ Plugin 'altercation/vim-colors-solarized'
 Plugin 'octol/vim-cpp-enhanced-highlight'
 Plugin 'tpope/vim-fugitive'
 Plugin 'pangloss/vim-javascript'
+Plugin 'fatih/vim-go'
 Plugin 'xolox/vim-misc'
 Plugin 'uarun/vim-protobuf'
 Plugin 'hynek/vim-python-pep8-indent'
@@ -62,9 +65,16 @@ autocmd FileType html,css,javascript set shiftwidth=4
 autocmd FileType tex set shiftwidth=2
 autocmd FileType tex set spell spelllang=ru_ru,en_us
 
+" YAML files:
+"   * 2 space indentation
+autocmd FileType yaml,yml set shiftwidth=2
+
 " Use UNIX (\n) line endings.
 " Only used for new files so as to not force existing files to change their line endings.
 set fileformat=unix
+
+" Fix backspace deleting only characters typed in the current insert session.
+set backspace=indent,eol,start
 
 " Try to show at least three lines and two columns of context when
 " scrolling
@@ -128,8 +138,8 @@ map <Leader>w :w<CR>
 " Highlight line under cursor
 nnoremap <Leader>c :set cursorline!<CR>
 
-" Insert ipdb.set_trace under the current line
-map <Leader>b oimport ipdb; ipdb.set_trace()<Esc>
+" Insert pdb.set_trace under the current line
+map <Leader>b oimport pdb; pdb.set_trace()<Esc>
 
 " Easy split window navigation
 " use ALT+navigation key to switch split windows
@@ -147,6 +157,10 @@ imap <M-Left> <C-O>gT
 
 " ***** PLUGINS *****
 
+" Ale
+let g:ale_lint_on_text_changed = 'never'
+let g:ale_python_pylint_options = '--rcfile=~/.pylintc'
+
 " NERDTree
 noremap <silent> <F10> :NERDTreeFind<CR>
 let NERDTreeIgnore = ['\.pyc$', '\.pyo$', '\.swp$', '\~$']
@@ -155,6 +169,7 @@ let NERDTreeIgnore = ['\.pyc$', '\.pyo$', '\.swp$', '\~$']
 " Disable session autosave dialog
 let g:session_autosave='no'
 let g:session_persist_globals = [
+    \ 'g:ale_python_pylint_options',
     \ 'g:syntastic_python_checkers',
     \ 'g:syntastic_python_pylint_args',
     \ 'g:syntastic_python_pylint_post_args'
