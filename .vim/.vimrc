@@ -37,6 +37,9 @@ filetype plugin indent on
 
 " ***** GENERAL CONFIG *****
 
+" Share vim and clipboard buffer on Mac
+set clipboard=unnamed
+
 " Remap global and local leaders to ,
 let mapleader=","
 let maplocalleader=","
