@@ -182,6 +182,8 @@ let g:session_persist_globals = [
 nmap <F9> :TagbarToggle<CR>
 
 " Syntastic
+" Use only chktex
+let g:syntastic_tex_checkers = ['chktex']
 " Set path to pylintrc
 let g:syntastic_python_pylint_args = '--rcfile=~/.pylintrc'
 let g:syntastic_python_pylint_post_args = ''
