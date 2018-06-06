@@ -1,3 +1,5 @@
+.DS_Store
+
 .vim/bundle/
 .vim/sessions/
 .vim/spell/
